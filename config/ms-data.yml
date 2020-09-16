@@ -1,4 +1,7 @@
 spring:
+  data:
+    mongodb:
+      uri: mongodb://admin:mateng@111.229.123.74:27017/admin
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://111.229.123.74:3306/mango?useUnicode=true&characterEncoding=utf8&useSSL=false
@@ -23,22 +26,4 @@ spring:
     password: mateng
 #    hibernate:
 #      ddl-auto: create
-
-
-eureka:
-  client:
-    healthcheck:
-      enabled: true
-    service-url:
-      defaultZone: http://root:mateng@localhost:10001/eureka
-  instance:
-    prefer-ip-address: true
-    instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
-feign:
-  hystrix:
-    enabled: true
-
-swagger2:
-  enable: false
-
 
