@@ -1,0 +1,43 @@
+  
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://59.110.20.224:3306/mango?useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password: mateng
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
+ # redis:
+ #   host: 59.110.20.224
+  #  port: 6379
+ #   jedis:
+  #    pool:
+  #      max-idle: 8
+  #      min-idle: 0
+  #      max-active: 8
+   #     max-wait: -1
+  #  timeout: 0
+   # password: mateng
+#    hibernate:
+#      ddl-auto: create
+
+
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    service-url:
+      defaultZone: http://root:mateng@localhost:10001/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
+feign:
+  hystrix:
+    enabled: true
+
+swagger2:
+  enable: false
