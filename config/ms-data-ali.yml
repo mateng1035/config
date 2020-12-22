@@ -43,3 +43,9 @@ feign:
 
 swagger2:
   enable: false
+
+minio:
+  url: http://59.110.20.224:9000/
+  accessKey: minioadmin
+  secretKey: minioadmin
+  bucketName: ms-depository
