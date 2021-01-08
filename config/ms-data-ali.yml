@@ -33,7 +33,7 @@ eureka:
     healthcheck:
       enabled: true
     service-url:
-      defaultZone: http://root:mateng@localhost:10001/eureka
+      defaultZone: http://root:mateng@localhost:15001/eureka
   instance:
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
